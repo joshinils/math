@@ -4,47 +4,22 @@
 
 int main()
 {
-    Matrix m(3, 3);
-    Matrix n(3, 3);
-    Matrix e(3, 3);
+    Matrix m(3, 2);
+    Matrix b(3, 1);
+    b.set(0, 0, 1);
+    b.set(1, 0, 2);
+    b.set(2, 0, 3);
 
-
-    //double val = -1e-99;
-    //for (size_t i = 0; i < m.rows(); i++)
-    //{
-    //    for (size_t j = 0; j < m.cols(); j++)
-    //    {
-    //        m.set(i, j, val += 1e-100);
-    //    }
-    //}
-    //std::cout << std::setw(10) << 3.14f << std::endl;
-
-
-    for (size_t i = 0; i < m.rows(); i++)
-    {
-        m.set(i, i, 2);
-    }
-
-    int val = 0;
-    for (size_t i = 0; i < n.rows(); i++)
-    {
-        for (size_t j = 0; j < n.cols(); j++)
-        {
-            n.set(i, j, ++val);
-        }
-    }
+    m.set(0, 0, 1);    m.set(0, 1, 1);
+    m.set(1, 0, 1);    m.set(1, 1, 3);
+    m.set(2, 0, 1);    m.set(2, 1, 4);
 
     std::cout << m << std::endl;
-    std::cout << n << std::endl;
-    std::cout << e << std::endl;
+    std::cout << b << std::endl;
 
-    e = m;
+    Matrix erg = Matrix::num2u1a5(m, b);
 
-    e = e - e;
-
-    std::cout << m << std::endl;
-    std::cout << n << std::endl;
-    std::cout << e << std::endl;
+    std::cout << erg << std::endl;
 
     return 0;
 }
