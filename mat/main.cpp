@@ -2,6 +2,9 @@
 #include <iostream>
 #include <iomanip>
 
+#include "olcPixelGameEngine.h"
+#include "Plot.h"
+
 int main()
 {
     Matrix m(3, 2);
@@ -20,6 +23,15 @@ int main()
     Matrix erg = Matrix::num2u1a5(m, b);
 
     std::cout << erg << std::endl;
+
+    Plot demo;
+    float scale = 8;
+    int width = 1600 / scale;
+    int height = 960 / scale;
+    if (demo.Construct(width, height, scale, scale))
+    {
+        demo.Start();
+    }
 
     return 0;
 }
